@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+import React from 'react';
 import clsx from 'clsx';
 
-const TextScroller = ({ text, styles }: { text: string; styles?: string }) => {
-  const [key, setKey] = useState(1);
-
-  const scrolling = useSpring({
-    from: { transform: 'translate(60%,0)' },
-    to: { transform: 'translate(-60%,0)' },
-    config: { duration: 5000 },
-    reset: true,
-    //reverse: key % 2 == 0,
-    onRest: () => {
-      setKey(key + 1);
-    },
-  });
-
+const TextScroller = ({
+  text,
+  styles,
+}: {
+  text: string;
+  styles?: React.ComponentProps<'div'>['className'];
+}) => {
   return (
-    <div key={key}>
-      <animated.div
-        style={scrolling}
-        className={clsx('whitespace-nowrap', styles)}
-      >
+    <div className={clsx('text-scroller', styles)}>
+      <p className={'1'}>
         {text} {text} {text}
-      </animated.div>
+      </p>
+      <p className={'2'}>
+        {text} {text} {text}
+      </p>
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import Image from 'next/image'
+import WorkScroller from '@/views/work';
 
 export default function Work() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Work</h1>
+    <main>
+      <WorkScroller />
     </main>
-  )
+  );
 }
