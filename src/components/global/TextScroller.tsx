@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import Marquee from 'react-fast-marquee';
 
 const TextScroller = ({
   text,
@@ -9,14 +10,9 @@ const TextScroller = ({
   styles?: React.ComponentProps<'div'>['className'];
 }) => {
   return (
-    <div className={clsx('text-scroller', styles)}>
-      <p className={'1'}>
-        {text} {text} {text}
-      </p>
-      <p className={'2'}>
-        {text} {text} {text}
-      </p>
-    </div>
+    <Marquee className={clsx(styles)}>
+      {text}
+    </Marquee>
   );
 };
 

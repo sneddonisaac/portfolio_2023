@@ -1,0 +1,36 @@
+.menu {
+  background: #fff;
+  height: 80vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  overflow: hidden;
+  transform: translateY(0);
+  transition-property: all;
+  transition-duration: 350ms;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+  &.menu_hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    z-index: 89;
+    overflow-y: hidden;
+    background-color: #131313;
+    opacity: 0.3;
+  }
+}

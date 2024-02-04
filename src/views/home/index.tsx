@@ -1,35 +1,21 @@
 'use client';
-import { Canvas } from '@react-three/fiber';
-import Box from '@/components/gl/Box';
-import SphereComponent from '@/components/gl/Sphere2';
+
+import HomeHero from "@/components/heros/HomeHero";
 
 export default function HomeView() {
   return (
-    <main className='flex h-screen w-screen flex-col items-center justify-between overflow-hidden p-24'>
-      <div
-        className={
-          'fixed w-full h-full text-center text-5xl font-semibold'
-        }
-	style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
-      >
-        <SphereComponent radius={10} />
-      </div>
-      <div
-        className={
-          'fixed left-[50%] top-[50%] w-2/3 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-semibold'
-        }
-      >
-        <span className={'relative z-10'}>
-          Creative Web Developer
-          <span
-            className={
-              'absolute bottom-0 whitespace-nowrap text-lg font-normal'
-            }
-          >
-            UK Based
-          </span>
-        </span>
-      </div>
+    <main className='flex h-full w-screen flex-col items-center justify-between'>
+      <HomeHero />
+      <section className="h-screen w-screen flex justify-center items-center p-8">
+        <div className="h-full flex flex-col justify-center space-y-6 items-center">
+          <h2 className="uppercase text-2xl font-bold">
+            Leading from the front
+          </h2>
+          <p>
+            Technical teams are seldom self sufficient and rarely run to optimal efficiencies without constant management.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

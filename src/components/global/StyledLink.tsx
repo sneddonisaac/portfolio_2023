@@ -25,9 +25,9 @@ export default function Link({
   ally,
 }: Props) {
   return (
-    <div className={'group '}>
+    <div className={'group inline-block'}>
       <A
-        className={clsx('capitalize', styles)}
+        className={clsx(styles)}
         href={href ? href : `/${name.toLowerCase()}`}
         aria-label={ally}
       >
