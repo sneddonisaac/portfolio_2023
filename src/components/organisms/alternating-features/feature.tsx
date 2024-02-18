@@ -35,7 +35,7 @@ function Feature({ index, feature }: FeaturesProps) {
           </motion.p>
         }
       </div>
-      <Link href={feature.link} className={clsx("feature__image", isEven(index) ? "feature__image-even" : "feature__image-odd")}>
+      <Link href={feature.link} className={clsx("feature__image interactable", isEven(index) ? "feature__image-even" : "feature__image-odd")}>
         <Image
           alt={feature.image.alt}
           src={feature.image.url}

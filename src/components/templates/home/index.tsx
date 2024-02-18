@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/atoms/button";
 import { AlternatingFeatures, AlternatingFeaturesType } from "@/components/organisms/alternating-features";
+import { BasicParagraph } from "@/components/organisms/basic-paragraph";
 import { HomeHero } from "@/components/organisms/home-hero";
 
 export default function HomeView() {
@@ -19,6 +20,7 @@ export default function HomeView() {
           <button className="px-4 py-2 border-black border-2 hover:bg-black hover:text-white transition-colors duration-300 ease-in-out">Learn More</button>
         </div>
       </section> */}
+      <BasicParagraph />
       <AlternatingFeatures {...AlternatingFeaturesData} />
     </main>
   );

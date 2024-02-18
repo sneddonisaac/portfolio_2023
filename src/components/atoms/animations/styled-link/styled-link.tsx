@@ -1,8 +1,11 @@
+"use client"
 import clsx from 'clsx';
 import { UrlObject } from 'url';
 import React from 'react';
 import Link from 'next/link';
 import "./styled-link.scss";
+import { usePathname, useRouter } from 'next/navigation';
+import { animatePageOut } from '@/utils/helpers/pageTransitionAnimations';
 
 interface Props {
   name?: string;
@@ -17,9 +20,10 @@ function StyledLink({
   classes,
   children,
 }: Props) {
+
   return (
     <Link
-      className={clsx("link", classes)}
+      className={clsx("link interactable", classes)}
       href={href}
       aria-label={`${name} page`}
     >
@@ -28,4 +32,33 @@ function StyledLink({
   );
 }
 
-export { StyledLink };
+function TransitionLink({
+  href,
+  label,
+  children,
+  classes
+}: {
+  href: string;
+  label?: string;
+  children?: React.ReactNode;
+  classes?: string;
+}) {
+  const router = useRouter();
+  const pathname = usePathname()
+  console.log("🚀 ~ pathname:", pathname);
+
+  const handleClick = () => {
+    animatePageOut(href, router, pathname);
+  };
+
+  return (
+    <button
+      className={clsx("link interactable cursor-pointer", classes)}
+      onClick={handleClick}
+    >
+      {label ? label : children}
+    </button>
+  );
+}
+
+export { StyledLink, TransitionLink };

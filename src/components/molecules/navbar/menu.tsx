@@ -1,5 +1,5 @@
 'use client';
-import { StyledLink } from '@/components/atoms/animations/styled-link';
+import { StyledLink, TransitionLink } from '@/components/atoms/animations/styled-link';
 import clsx from "clsx";
 import React from 'react';
 
@@ -44,7 +44,7 @@ export default function Menu({ show, setShow }: { show: boolean, setShow: any })
             <ul>
               {navigation.map((i) => (
                 <li onClick={() => setShow(!show)} key={i.id}>
-                  <StyledLink href={i.name}>{i.name}</StyledLink>
+                  <TransitionLink label={i.name} href={`/${i.name}`} />
                 </li>
               ))}
             </ul>
