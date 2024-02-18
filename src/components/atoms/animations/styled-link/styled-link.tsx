@@ -45,7 +45,6 @@ function TransitionLink({
 }) {
   const router = useRouter();
   const pathname = usePathname()
-  console.log("🚀 ~ pathname:", pathname);
 
   const handleClick = () => {
     animatePageOut(href, router, pathname);

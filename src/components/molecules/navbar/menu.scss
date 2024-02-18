@@ -38,6 +38,10 @@
           text-transform: uppercase;
           font-size: $font-4xl;
           line-height: 2.5rem;
+
+          button {
+            text-transform: uppercase;
+          }
         }
       }
     }
