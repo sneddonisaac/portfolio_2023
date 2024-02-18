@@ -1,4 +1,4 @@
-import HomeView from '@/views/home';
+import HomeView from '@/components/templates/home';
 
 export default function Home() {
   return (

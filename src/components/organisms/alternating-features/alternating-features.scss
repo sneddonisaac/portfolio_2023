@@ -1,0 +1,77 @@
+@import '@/styles/_variables.scss';
+
+.alternating-features {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    &-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      width: 80%;
+
+      span {
+        display: block;
+        width: 100%;
+        line-height: 1;
+
+        &:nth-child(odd) {
+          text-align: left;
+        }
+
+        &:nth-child(even) {
+          text-align: right;
+        }
+      }
+
+      @include respond-to($breakpoint-md) {
+        font-size: 5rem;
+      }
+
+      @include respond-to($breakpoint-lg) {
+        font-size: 6rem;
+        width: 60%;
+      }
+
+      @include respond-to($breakpoint-xl) {
+        font-size: 8rem;
+      }
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@keyframes fadeInRotate {
+  0% {
+    opacity: 0;
+    transform: rotateX(60deg) rotateY(10deg) rotateZ(-10deg);
+    transform-origin: top;
+    animation-timing-function: cubic-bezier(.15,.7,.78,1);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

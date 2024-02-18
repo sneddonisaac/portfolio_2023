@@ -1,0 +1,10 @@
+@import "@/styles/_variables";
+
+.footer {
+  height: 80vh;
+  position: sticky;
+  bottom: 0;
+  background: $color-dark;
+  color: $color-light;
+  padding: $spacing-large;
+}

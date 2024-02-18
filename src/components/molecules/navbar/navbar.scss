@@ -1,0 +1,89 @@
+@import "@/styles/_variables.scss";
+
+.navbar {
+  height: $spacing-2xl;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 40;
+  padding: 0 $spacing-xl;
+  width: 100%;
+  transition: all;
+  transition-duration: 350ms;
+  transition-timing-function: linear;
+  justify-content: space-between;
+
+  &__home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    line-height: 1.375;
+    overflow-x: hidden;
+    white-space: nowrap;
+
+    &--show {
+      transform: translateX(0);
+      width: fit-content;
+    }
+
+    &--remove {
+      transform: translateX(-100%);
+      width: 0;
+      display: none;
+    }
+  }
+
+  &__menu {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 2.5rem;
+
+    &--line {
+      height: 2px;
+      background: $color-dark;
+      transition: all 350ms ease;
+
+      &:nth-child(odd) {
+        width: 1.5rem;
+      }
+
+      &:nth-child(even) {
+        width: $spacing-large;
+      }
+
+      &:first-child {
+        &.open {
+          transform: rotate(45deg) translateY(200%);
+          transition-delay: 100ms;
+        }
+      }
+
+      &:last-child {
+        &.open {
+          transform: rotate(-45deg) translateY(-200%);
+          transition-delay: 100ms;
+        }
+      }
+    }
+
+    &:hover {
+      .navbar__menu--line {
+        &:nth-child(odd) {
+          width: $spacing-large;
+
+          &.closed {
+            width: $spacing-large;
+          }
+        }
+
+        &:nth-child(even) {
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+}
