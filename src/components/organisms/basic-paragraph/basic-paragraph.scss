@@ -1,0 +1,75 @@
+@import '@/styles/_variables.scss';
+
+.basic-paragraph {
+  margin: $spacing-2xl 0;
+  background: $color-dark;
+  padding: 80px $spacing-large;
+  width: 100%;
+  display: block;
+  position: relative;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: $color-light;
+
+  @include respond-to($breakpoint-sm) {
+    padding: 120px $spacing-large;
+  }
+
+  @include respond-to($breakpoint-md) {
+    padding: 150px $spacing-large;
+  }
+
+  @include respond-to($breakpoint-lg) {
+    padding: 15rem $spacing-large;
+  }
+
+  &__top-edge {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 15%;
+    overflow: hidden;
+    background: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: 160%;
+      height: 520%;
+      background: $color-dark;
+      border-radius: 100%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+
+    @include respond-to($breakpoint-lg) {
+        width: 60%;
+    }
+
+    &-content {
+      display: block;
+
+      h2 {
+        font-size: $font-2xl;
+      }
+
+      p {
+        font-size: $font-3xl;
+      }
+    }
+  }
+}

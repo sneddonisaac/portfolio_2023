@@ -6,6 +6,7 @@ import { headers } from "next/headers";
 import { Navbar } from '@/components/molecules/navbar';
 import { config } from '@/utils/config';
 import { Footer } from '@/components/molecules/footer';
+import {Cursor} from '@/components/atoms/cursor';
 
 const cabinet = localFont({
   src: [
@@ -70,7 +71,7 @@ export async function generateMetadata(
 
   return {
     title: {
-      template: `${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1) } | ${config.name}`,
+      template: `${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)} | ${config.name}`,
       default: config.name,
     },
     openGraph: {
@@ -91,6 +92,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Cursor />
       </body>
     </html>
   );

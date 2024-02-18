@@ -1,5 +1,5 @@
 import "./home-hero.scss";
-import { StyledLink } from "@/components/atoms/animations/styled-link";
+import { TransitionLink } from "@/components/atoms/animations/styled-link";
 
 function HomeHero() {
     return (
@@ -7,8 +7,8 @@ function HomeHero() {
             <div />
             <div>
                 <h1 className="home-hero_heading">
-                    <StyledLink href="lab">Developing</StyledLink> efficient &<br />
-                    effective <StyledLink href="work">technical</StyledLink> <br />
+                    <TransitionLink href="lab">Developing</TransitionLink> efficient &<br />
+                    effective <TransitionLink href="work">technical</TransitionLink> <br />
                     teams.
                 </h1>
             </div>
