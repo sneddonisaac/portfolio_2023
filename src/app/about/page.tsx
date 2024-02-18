@@ -1,4 +1,4 @@
-import AboutView from "@/views/about";
+import AboutView from "@/components/templates/about";
 
 export default function About() {
   return (

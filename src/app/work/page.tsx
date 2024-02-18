@@ -1,9 +1,9 @@
-import WorkScroller from '@/views/work';
+import WorkView from '@/components/templates/work';
 
 export default function Work() {
   return (
     <main>
-      <WorkScroller />
+      <WorkView />
     </main>
   );
 }

@@ -1,0 +1,16 @@
+.button {
+  &[data-type='basic'] {
+    padding: 0.5rem 1rem;
+    border-width: 2px;
+    border-color: rgb(0 0 0 / 1);
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+}
